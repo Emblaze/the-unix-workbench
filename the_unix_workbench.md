@@ -1,90 +1,36 @@
-<!-- TOC depthFrom:1 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [**The UNIX workbench**](#the-unix-workbench)
 	- [**Week 1**](#week-1)
 		- [**Command line basics**](#command-line-basics)
-			- [**Creation & Inspection**](#creation-inspection)
-			- [**Migration & Destruction:exclamation:**](#migration-destructionexclamation)
 	- [**Week 2**](#week-2)
 		- [**Self-help**](#self-help)
 		- [**Wildcards**](#wildcards)
 		- [**Character sets**](#character-sets)
 		- [**Search : Regular expressions**](#search-regular-expressions)
 		- [**Find**](#find)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Configure**](#configure)
-			- [Summary](#summary)
 		- [**Differentiate**](#differentiate)
 		- [**Pipes**](#pipes)
-			- [Exercises](#exercises)
 		- [**Make**](#make)
-			- [Summary](#summary)
 	- [**Week 3**](#week-3)
 		- [**Maths**](#maths)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Variables**](#variables)
 		- [**Arguments**](#arguments)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**User input - read**](#user-input-read)
-			- [Exercises](#exercises)
 		- [**Logic and If/Else**](#logic-and-ifelse)
-			- [Notion of exit status:](#notion-of-exit-status)
-			- [Logical operators: && ( AND ), || ( OR )](#logical-operators-and-or-)
 		- [**Conditional expressions - \[\[ expression \]\]**](#conditional-expressions-expression-)
-			- [Notion of conditional expression](#notion-of-conditional-expression)
-			- [Binary logical expression vs. Unary logical expressions](#binary-logical-expression-vs-unary-logical-expressions)
 		- [**if and else**](#if-and-else)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Arrays**](#arrays)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Braces**](#braces)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Loops**](#loops)
-			- [**FOR loops**](#for-loops)
-			- [**WHILE loops**](#while-loops)
-			- [**Nesting**](#nesting)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Writing Functions**](#writing-functions)
 		- [**Getting values from functions**](#getting-values-from-functions)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Writing Programs**](#writing-programs)
-			- [**Making programs executable - Permissions**](#making-programs-executable-permissions)
-			- [**Environmental variables**](#environmental-variables)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 	- [**Week 4**](#week-4)
 		- [**Git and GitHub**](#git-and-github)
-			- [**Git and GitHub Basics**](#git-and-github-basics)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Important Git Features**](#important-git-features)
-			- [**Gitting Help, Logs and Diffs**](#gitting-help-logs-and-diffs)
-			- [**Ignoring files**](#ignoring-files)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
-			- [**Branching**](#branching)
-			- [**Merging**](#merging)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
-			- [**GitHub**](#github)
-			- [**Markdown**](#markdown)
-			- [**Pull requests and Forking**](#pull-requests-and-forking)
-			- [**GitHub Pages**](#github-pages)
-			- [**Forking**](#forking)
-			- [Summary](#summary)
-			- [Exercises](#exercises)
 		- [**Nephology**](#nephology)
-			- [**Nephology Introduction**](#nephology-introduction)
-			- [**Cloud Computing Basics**](#cloud-computing-basics)
-			- [**Shutting Down a Server**](#shutting-down-a-server)
 		- [**Start Building**](#start-building)
 
 <!-- /TOC -->
@@ -143,28 +89,28 @@ The real power of regular expressions comes form using metacharacters.
 There’s a mnemonic that I love for remembering which metacharacter to use for each anchor:
 > **“First you get the power, then you get the money.”**
 
-Metacharacter|Meaning
--------------|
-.	| Any Character
-\\w | A Word
-\\W | Not a Word
-\\d | A Digit
-\\D | Not a Digit
-\\s | Whitespace
-\\S | Not Whitespace
-\[def] | A Set of Characters
-\[^def] | Negation of Set
-\[e-q]	| A Range of Characters
-^	| Beginning of String
-$	| End of String
-\\n | Newline
-+ | One or More of Previous
-* | Zero or More of Previous
-? | Zero or One of Previous
-&#124; |Either the Previous or the Following
-{6} | Exactly 6 of Previous
-{4, 6} | Between 4 and 6 or Previous
-{4, } | More than 4 of Previous
+| Metacharacter | Meaning |
+|--|--|
+| . | Any Character |
+| \w | A Word |
+| \W | Not a Word |
+| \d | A Digit |
+| \D | Not a Digit |
+| \s | Whitespace |
+| \S | Not Whitespace |
+| \[def] | A Set of Characters |
+| \[^def] | Negation of Set |
+| \[e-q]	| A Range of Characters |
+| \^ | Beginning of String |
+| \$ | End of String |
+| \n | Newline |
+| \+ | One or More of Previous |
+|  \* | Zero or More of Previous |
+| ? | Zero or One of Previous |
+| &#124; | Either the Previous or the Following |
+| {6} | Exactly 6 of Previous |
+| {4, 6} | Between 4 and 6 or Previous |
+| {4, } | More than 4 of Previous |
 
 [RegExr is an online tool to learn, build, & test Regular Expressions (RegEx / RegExp).](http://regexr.com/)
 
@@ -244,7 +190,7 @@ Concept of makefile : a file that describes the relationships bewteen different 
     [target]: [dependencies...]
       [commands...]
 
-[Makefile Tutorial by Example](makefiletutorial.com)
+[Makefile Tutorial by Example](http://makefiletutorial.com)
 
 #### Summary
 
@@ -399,29 +345,29 @@ When writing computer programs it is often useful for your program to be able to
 
 *   **Logical flags**
 
-Logical Flag| Meaning | Usage
--------------|
-\-gt|Greater Than|\[\[ $planets -gt 8 ]]
-\-ge	| Greater Than or Equal To |	\[\[ $votes -ge 270 ]]
-\-eq	|Equal |\[\[ $fingers -eq 10 ]]
-\-ne	| N ot Equal |	\[\[ $pages -ne 0 ]]
-\-le	| Less Than or Equal To |	\[\[ $candles -le 9 ]]
-\-lt	| Less Than |	\[\[ $wives -lt 2 ]]
-\-e	| A File Exists |	\[\[ -e $taxes_2016 ]]
-\-d	| A Directory Exists |	\[\[ -d $photos ]]
-\-z	| Length of String is Zero |	\[\[ -z $name ]]
-\-n	| Length of String is Non-Zero |	\[\[ -n $name ]]
+| Logical Flag | Meaning | Usage |
+| -------------|---------|-------|
+| \-gt | Greater Than | \[\[ $planets -gt 8 ]] |
+| \-ge	| Greater Than or Equal To |	\[\[ $votes -ge 270 ]] |
+| \-eq	| Equal | \[\[ $fingers -eq 10 ]] |
+| \-ne	| Not Equal |	\[\[ $pages -ne 0 ]] |
+| \-le	| Less Than or Equal To |	\[\[ $candles -le 9 ]] |
+| \-lt	| Less Than |	\[\[ $wives -lt 2 ]] |
+| \-e	| A File Exists |	\[\[ -e $taxes_2016 ]] |
+| \-d	| A Directory Exists |	\[\[ -d $photos ]] |
+| \-z	| Length of String is Zero |	\[\[ -z $name ]] |
+| \-n	| Length of String is Non-Zero |	\[\[ -n $name ]] |
 
 *   **Logical operators**
 
     One of the most useful logical operators is the regex match operator =~
 
-Logical Operator| Meaning | Usage
-----------------|
-=~|Matches Regular Expression	|\[\[ $consonants =~ \[aeiou] ]]
-=	| String Equal To	| \[\[ $password = "pegasus" ]]
-!=	| String Not Equal To	| \[\[ $fruit != "banana" ]]
-!	| Not	| \[\[ ! "apple" =~ ^b ]]
+| Logical Operator | Meaning | Usage |
+| ----------------|----------|-------|
+| =~ | Matches Regular Expression	| \[\[ $consonants =~ \[aeiou] ]] |
+| =	| String Equal To	| \[\[ $password = "pegasus" ]] |
+| !=	| String Not Equal To	| \[\[ $fruit != "banana" ]] |
+| !	| Not	| \[\[ ! "apple" =~ ^b ]] |
 
 ### **if and else**
 
@@ -708,9 +654,11 @@ Below this list of exercises you can find examples of how these programs should 
 
 -   Using small programs to write a new program will increase the likelihood that the new program will also be small. Composability is the concept of stringing small programs together to create a new program.
 
-The concept of composability in Unix is best illustrated by the use of the pipe operator ( | ) for creating pipelines of programs. When you’re considering what inputs your program is going to have and what your program is going to print to the console you should consider whether or not your program might be used in a pipeline, and you should organize your program accordingly.
+The concept of **composability** in Unix is best illustrated by the use of the pipe operator ( **|** ) for creating pipelines of programs. When you’re considering what inputs your program is going to have and what your program is going to print to the console you should consider whether or not your program might be used in a pipeline, and you should organize your program accordingly.
 
-In the previous section we discussed the difference between functions that compute values and functions that produce side effects. You should notice that the side effect functions like mv and cp do not print any text to the console if they are successful. The concept of quietness is another important part of the Unix philosophy. Quietness in this case means that a function should not print to the console unless it is necessary, either to inform the user of a value (pwd), to display the result of a computation (bc), or to warn the user that an error has occurred.
+In the previous section we discussed the difference between **functions that compute values** and **functions that produce side effects**. You should notice that the side effect functions like **mv** and **cp** do not print any text to the console if they are successful.
+
+The concept of **quietness** is another important part of the Unix philosophy. Quietness in this case means that a function should not print to the console unless it is necessary, either to inform the user of a value (**pwd**), to display the result of a computation (**bc**), or to warn the user that an error has occurred.
 
 
 #### **Making programs executable - Permissions**
@@ -721,28 +669,42 @@ The chmod command takes two arguments. The first argument is a string which spec
 
 We then need to specify whether we’re going to add, remove, or set the permission:
 
-Character| Meaning
-----------|
-u |	The owner of the file
-g |	The group that the file belongs to
-o	| Everyone else
-a	| Everyone above
+| Character | Meaning |
+| ----------|
+| u |	The owner of the file |
+| g |	The group that the file belongs to |
+| o	| Everyone else |
+| a	| Everyone above |
 
-Character| Meaning
-----------|
-+ | Add permission
-- |Remove permission
-=	| Set permission
+We then need to specify whether we’re going to add, remove, or set the permission:
 
-  Finally we specify what permission we’re changing:
+| Character | Meaning |
+| ----------|
+| + | Add permission |
+| - | Remove permission |
+| =	| Set permission |
 
-Character| Meaning
-----------|
-r |	Read a file
-w	| Write to or edit a file
-x	| Execute a file
+Finally we specify what permission we’re changing:
+
+| Character | Meaning |
+| ----------|
+| r |	Read a file |
+| w	| Write to or edit a file |
+| x	| Execute a file |
 
  To run an executable file we need to specify the path to the file, even if the path is in the current directory, meaning we need to prepend ./ to a program.
+
+	Symbolic:  r-- -w- --x  |  421
+	Binary:    100 010 001  |  -------
+	Decimal:    4   2   1   |  000 = 0
+	                        |  001 = 1
+	Symbolic:  rwx r-x r-x  |  010 = 2
+	Binary:    111 101 101  |  011 = 3
+	Decimal:    7   5   5   |  100 = 4
+	           /   /   /    |  101 = 5
+	Owner  ---/   /   /     |  110 = 6
+	Group  ------/   /      |  111 = 7
+	Others ---------/       |  Binary to Octal chart
 
 #### **Environmental variables**
 
@@ -1095,7 +1057,7 @@ The original source repository (the repository you forked) is often called the u
 
 *   List remote repositories with **git remote**.
 
-*   Add remote repositiories with git remote add \[name-of-remote] https://github.com/\[username]/\[repo-name].git
+*   Add remote repositiories with git remote add \[name-of-remote] <https://github.com/[username]/[repo-name].git>
 
 *   Add commits to your remote repository with **git push \[name-of-remote] \[name-of-branch]** or just git push if you’ve set up a default remote and branch.
 
@@ -1109,7 +1071,7 @@ The original source repository (the repository you forked) is often called the u
 
 #### Exercises
 
--   [ ] Create a new repository on GitHub. Clone your repository and add a README.md file. Push this file to GitHub and create a GitHub Pages website for this repository.
+-   [x] Create a new repository on GitHub. Clone your repository and add a README.md file. Push this file to GitHub and create a GitHub Pages website for this repository.
 
 -   [ ] Fork an existing repository (try one of mine [seankross](https://github.com/seankross)) and try to identify something valuable you could contribute. Make changes or additions to that repository, then open a pull request.
 
@@ -1117,11 +1079,72 @@ The original source repository (the repository you forked) is often called the u
 
 ### **Nephology**
 
+"The cloud is just someone else's computer"
+
 #### **Nephology Introduction**
+
+[Digital Ocean 2 months free trial](https://m.do.co/c/530d6cfa2b37)
+
+	ssh [username]@[IP address]
+
+	logout
 
 #### **Cloud Computing Basics**
 
-#### **Shutting Down a Server**
+*   Moving Files In and Out
+
+Copy a file and and entire repertory from remote machine to local one:
+
+	scp [username]@[IP address]:path/to/file/on/server path/on/my/computer
+	scp -r [username]@[IP address]:path/to/folder/on/server folder/on/my/computer
+
+Copy from local machine to a remote one:
+
+	scp path/on/my/computer [username]@[IP address]:path/to/file/on/server
+
+*   Talking to other servers
+
+To download a file with curl, we simply need to provide the -O flag and the URL of the file:
+
+	curl -O http://website.org/textfile.txt
+
+The curl command is also commonly used for communicating with APIs.
+
+	curl https://api.github.com/repos/seankross/the-unix-workbench/languages
+
+HTTP requests & verbs:
+
+	curl http://httpbin.org/get
+
+In the general case we can provide arguments to an HTTP API by putting a question mark (?) after the API’s URL.
+
+	curl http://httpbin.org/get?Baltimore
+
+We can specify an argument’s name with the template \[argument name]=\[argument value].
+
+	curl http://httpbin.org/get?city=Baltimore
+
+	We can add more named arguments by separating them with an ampersand ( & )
+
+	curl "http://httpbin.org/get?city=Baltimore&state=Maryland"
+
+*   Automating tasks
+
+One of the most commonly used programs for executing other programs with a regular frequency is called cron.
+First, let’s see if cron is running. We can get a list of all running programs with the ps command while using the -A flag:
+
+	ps -A
+	#or better
+	ps -A | grep "cron"
+
+In order to assign programs to be executed with cron we need to edit a special text file called the cron table. Before we edit the cron table we need to select the default text editor.
+
+	select-editor
+	...
+
+Now that we’ve chosen a text editor we can edit the cron table using the command crontab -e (cron table edit) which will automatically open nano with the appropriate file.
+
+	crontab -e
 
 	# Example of job definition:
 	# .---------------- minute (0 - 59)
@@ -1131,5 +1154,17 @@ The original source repository (the repository you forked) is often called the u
 	# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 	# |  |  |  |  |
 	# *  *  *  *  *  user command to be executed]
+
+Star (*) which represents all of the possible values in a column.
+
+##### **Cloud Computing Exercises**
+
+-   [ ] Write a bash script that takes a file path as an argument and copies that file to a designated folder on your server.
+
+-   [ ] Find a file online that changes periodically, then write a program to download that file every time it changes.
+
+-   [ ] Try creating your own Twitter or GitHub bot with the Twitter API or the GitHub API.
+
+#### **Shutting Down a Server**
 
 ### **Start Building**
