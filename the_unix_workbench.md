@@ -46,7 +46,7 @@ Notion of absolute/relative path, cd, ~/, / (**root** level), pwd, ls
 
     wc lines, words, bytes # -n option for displaying line numbers
 
-#### **Migration & Destruction:exclamation:**
+#### **Migration & Destruction**
 
     echo, touch, mkdir, cat
 
@@ -74,7 +74,7 @@ Notion of absolute/relative path, cd, ~/, / (**root** level), pwd, ls
 
     egrep -v #option for inverted match
 
-### **Search : Regular expressions**
+### **Search: Regular expressions**
 
 Regular expressions are strings that define patterns.
 
@@ -309,7 +309,7 @@ If you follow those rules then you can avoid accidentally overwriting data store
 
 When writing computer programs it is often useful for your program to be able to make decisions based on inputs like arguments, files, and environmental variables.
 
-    true
+  	true
     false
 
 #### Notion of exit status:
@@ -318,28 +318,28 @@ When writing computer programs it is often useful for your program to be able to
 
 #### Logical operators: && ( AND ), || ( OR )
 
-  **In a series of programs joined together by AND operators, any programs to the right of a program that has a non-zero exit status is not executed.**
+**In a series of programs joined together by AND operators, any programs to the right of a program that has a non-zero exit status is not executed.**
 
-  **Commands on the right hand side of || are only executed if the command on the left hand side fails and therefore has an exit status other than 0.**
+**Commands on the right hand side of || are only executed if the command on the left hand side fails and therefore has an exit status other than 0.**
 
-  You can combine AND and OR operators in commands, which are evaluated from left to right.
+You can combine AND and OR operators in commands, which are evaluated from left to right.
 
-  By combining AND and OR operators you can precisely control the conditions for when certain commands should be executed.
+By combining AND and OR operators you can precisely control the conditions for when certain commands should be executed.
 
-### **Conditional expressions - \[\[ expression \]\]**
+### **Conditional expressions: \[\[ expression \]\]**
 
 #### Notion of conditional expression
 
- Enabling your Bash script to make decisions is extremely useful.
+Enabling your Bash script to make decisions is extremely useful.
 
- Conditional execution allows you to control the circumstances where certain programs are executed based on whether those programs succeed or fail, but you can also construct conditional expressions which are logical statements that are either equivalent to true or false.
+Conditional execution allows you to control the circumstances where certain programs are executed based on whether those programs succeed or fail, but you can also construct conditional expressions which are logical statements that are either equivalent to true or false.
 
- Conditional expressions either compare two values, or they ask a question about one value. Conditional expressions are always between double brackets (\[\[ ]]), and they either use logical flags or logical operators.
+Conditional expressions either compare two values, or they ask a question about one value. Conditional expressions are always between double brackets (\[\[ ]]), and they either use logical flags or logical operators.
 
-  **Tip to quickly look at the resulting value of a logical expression:**
+**Tip to quickly look at the resulting value of a logical expression:**
 
-    [\[ 4 -gt 3 ]] && echo t || echo f
-    [\[ 3 -gt 4 ]] && echo t || echo f
+    [[ 4 -gt 3 ]] && echo t || echo f
+    [[ 3 -gt 4 ]] && echo t || echo f
 
 #### Binary logical expression vs. Unary logical expressions
 
@@ -360,10 +360,10 @@ When writing computer programs it is often useful for your program to be able to
 
 *   **Logical operators**
 
-    One of the most useful logical operators is the regex match operator =~
+One of the most useful logical operators is the regex match operator =~
 
 | Logical Operator | Meaning | Usage |
-| ----------------|----------|-------|
+| -----------------|----------|-------|
 | =~ | Matches Regular Expression	| \[\[ $consonants =~ \[aeiou] ]] |
 | =	| String Equal To	| \[\[ $password = "pegasus" ]] |
 | !=	| String Not Equal To	| \[\[ $fruit != "banana" ]] |
@@ -383,7 +383,7 @@ When writing computer programs it is often useful for your program to be able to
 
     echo "End program"
 
-  You should also know that you can combine conditional execution, conditional expressions, and IF/ELIF/ELSE statements. The conditional execution operators AND ( && ) and OR ( || ) can be used in an IF or ELIF statement.
+You should also know that you can combine conditional execution, conditional expressions, and IF/ELIF/ELSE statements. The conditional execution operators AND ( && ) and OR ( || ) can be used in an IF or ELIF statement.
 
     #!/usr/bin/env bash
     # File: condexif.sh
@@ -398,9 +398,9 @@ When writing computer programs it is often useful for your program to be able to
       echo "You entered: $1, not what I was looking for."
     fi
 
-  The conditional execution operators work just like they would on the command line. If the entire conditional expression evaluates to the equivalent of truethen the code within the IF statement is executed, otherwise it is skipped.
+The conditional execution operators work just like they would on the command line. If the entire conditional expression evaluates to the equivalent of truethen the code within the IF statement is executed, otherwise it is skipped.
 
-  Finally we should note that IF/ELIF/ELSE statements can be nested inside of other IF statements.
+Finally we should note that IF/ELIF/ELSE statements can be nested inside of other IF statements.
 
     #!/usr/bin/env bash
     # File: nested.sh
@@ -420,7 +420,7 @@ When writing computer programs it is often useful for your program to be able to
     echo "You entered: $1, not what I was looking for."
     fi
 
-  In order to get to the inner IF statement, the conditions for the outer IF statement must be met first (the first argument for the script must be between 3 and 7). As you can see combining variables, arguments, conditional expressions, and IF statements allow you to write more powerful Bash programs.
+In order to get to the inner IF statement, the conditions for the outer IF statement must be met first (the first argument for the script must be between 3 and 7). As you can see combining variables, arguments, conditional expressions, and IF statements allow you to write more powerful Bash programs.
 
 #### Summary
 
@@ -644,7 +644,7 @@ Below this list of exercises you can find examples of how these programs should 
 
  #### **The Unix Philosophy**
 
-  Unix tools were designed along a set of guidelines which are best summarized by Ken Thompson’s idea that each Unix program should do one thing well. Following this rule when writing functions and programs accomplished several goals:
+Unix tools were designed along a set of guidelines which are best summarized by Ken Thompson’s idea that each Unix program should do one thing well. Following this rule when writing functions and programs accomplished several goals:
 
 -   Limiting a program to only doing one thing reduces the length of the program, and the shorter a program is the easier it is to fix if it contains bugs or if it needs to be revised.
 
@@ -670,7 +670,7 @@ The chmod command takes two arguments. The first argument is a string which spec
 We then need to specify whether we’re going to add, remove, or set the permission:
 
 | Character | Meaning |
-| ----------|
+| ----------|---------|
 | u |	The owner of the file |
 | g |	The group that the file belongs to |
 | o	| Everyone else |
@@ -679,7 +679,7 @@ We then need to specify whether we’re going to add, remove, or set the permiss
 We then need to specify whether we’re going to add, remove, or set the permission:
 
 | Character | Meaning |
-| ----------|
+| ----------|---------|
 | + | Add permission |
 | - | Remove permission |
 | =	| Set permission |
@@ -687,7 +687,7 @@ We then need to specify whether we’re going to add, remove, or set the permiss
 Finally we specify what permission we’re changing:
 
 | Character | Meaning |
-| ----------|
+| ----------|--|
 | r |	Read a file |
 | w	| Write to or edit a file |
 | x	| Execute a file |
@@ -776,13 +776,13 @@ First we need to create a directory:
 
 	git status
 
- If we want to track all of the changes to all of the files in our directory we should use the command git add -A.
+If we want to track all of the changes to all of the files in our directory we should use the command git add -A.
 
 	git add -A
 	git status
 	git commit -m "added two files"
 
-Typo!
+We made a typo! Let's fix it.
 
 	git reset --soft HEAD~
 	git status
@@ -819,7 +819,7 @@ Typo!
 
 -   [ ]	Add two new files to your repository, but only commit one of them.
 
--   [ ] What is the status of your repository after the commit?Undo the last commit, add the untracked file, and redo the commit.
+-   [ ] What is the status of your repository after the commit? Undo the last commit, add the untracked file, and redo the commit.
 
 ### **Important Git Features**
 
@@ -1124,7 +1124,7 @@ We can specify an argument’s name with the template \[argument name]=\[argumen
 
 	curl http://httpbin.org/get?city=Baltimore
 
-	We can add more named arguments by separating them with an ampersand ( & )
+We can add more named arguments by separating them with an ampersand ( & )
 
 	curl "http://httpbin.org/get?city=Baltimore&state=Maryland"
 
