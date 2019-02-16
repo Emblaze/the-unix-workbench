@@ -3,11 +3,13 @@
 - [**The UNIX workbench**](#the-unix-workbench)
 	- [**Week 1**](#week-1)
 		- [**Command line basics**](#command-line-basics)
+		- [**Creation & Inspection**](#creation-inspection)
+		- [**Migration & Destruction**](#migration-destruction)
 	- [**Week 2**](#week-2)
 		- [**Self-help**](#self-help)
 		- [**Wildcards**](#wildcards)
 		- [**Character sets**](#character-sets)
-		- [**Search : Regular expressions**](#search-regular-expressions)
+		- [**Search: Regular expressions**](#search-regular-expressions)
 		- [**Find**](#find)
 		- [**Configure**](#configure)
 		- [**Differentiate**](#differentiate)
@@ -19,7 +21,7 @@
 		- [**Arguments**](#arguments)
 		- [**User input - read**](#user-input-read)
 		- [**Logic and If/Else**](#logic-and-ifelse)
-		- [**Conditional expressions - \[\[ expression \]\]**](#conditional-expressions-expression-)
+		- [**Conditional expressions: \[\[ expression \]\]**](#conditional-expressions-expression-)
 		- [**if and else**](#if-and-else)
 		- [**Arrays**](#arrays)
 		- [**Braces**](#braces)
@@ -42,11 +44,11 @@
 
 Notion of absolute/relative path, cd, ~/, / (**root** level), pwd, ls
 
-#### **Creation & Inspection**
+### **Creation & Inspection**
 
     wc lines, words, bytes # -n option for displaying line numbers
 
-#### **Migration & Destruction**
+### **Migration & Destruction**
 
     echo, touch, mkdir, cat
 
