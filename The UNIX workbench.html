@@ -1,0 +1,1446 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The UNIX workbench</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#the-unix-workbench">The UNIX workbench</a>
+<ul>
+<li><a href="#week-1">Week 1</a>
+<ul>
+<li><a href="#command-line-basics">Command line basics</a></li>
+<li><a href="#creation--inspection">Creation & Inspection</a></li>
+<li><a href="#migration--destruction">Migration & Destruction</a></li>
+</ul>
+</li>
+<li><a href="#week-2">Week 2</a>
+<ul>
+<li><a href="#self-help">Self-help</a></li>
+<li><a href="#wildcards">Wildcards</a></li>
+<li><a href="#character-sets">Character sets</a></li>
+<li><a href="#search-regular-expressions">Search: Regular expressions</a></li>
+<li><a href="#find">Find</a></li>
+<li><a href="#configure">Configure</a></li>
+<li><a href="#differentiate">Differentiate</a></li>
+<li><a href="#pipes">Pipes</a></li>
+<li><a href="#make">Make</a></li>
+</ul>
+</li>
+<li><a href="#week-3">Week 3</a>
+<ul>
+<li><a href="#maths">Maths</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#user-input---read">User input - read</a></li>
+<li><a href="#logic-and-ifelse">Logic and If/Else</a></li>
+<li><a href="#conditional-expressions--expression-">Conditional expressions: [[ expression ]]</a></li>
+<li><a href="#if-and-else">if and else</a></li>
+<li><a href="#arrays">Arrays</a></li>
+<li><a href="#braces">Braces</a></li>
+<li><a href="#loops">Loops</a></li>
+<li><a href="#writing-functions">Writing Functions</a></li>
+<li><a href="#getting-values-from-functions">Getting values from functions</a></li>
+<li><a href="#writing-programs">Writing Programs</a></li>
+</ul>
+</li>
+<li><a href="#week-4">Week 4</a>
+<ul>
+<li><a href="#git-and-github">Git and GitHub</a></li>
+<li><a href="#important-git-features">Important Git Features</a></li>
+<li><a href="#nephology">Nephology</a></li>
+<li><a href="#start-building">Start Building</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
+<ul>
+<li><a href="#the-unix-workbench"><strong>The UNIX workbench</strong></a>
+<ul>
+<li><a href="#week-1"><strong>Week 1</strong></a>
+<ul>
+<li><a href="#command-line-basics"><strong>Command line basics</strong></a></li>
+<li><a href="#creation-inspection"><strong>Creation &amp; Inspection</strong></a></li>
+<li><a href="#migration-destruction"><strong>Migration &amp; Destruction</strong></a></li>
+</ul>
+</li>
+<li><a href="#week-2"><strong>Week 2</strong></a>
+<ul>
+<li><a href="#self-help"><strong>Self-help</strong></a></li>
+<li><a href="#wildcards"><strong>Wildcards</strong></a></li>
+<li><a href="#character-sets"><strong>Character sets</strong></a></li>
+<li><a href="#search-regular-expressions"><strong>Search: Regular expressions</strong></a></li>
+<li><a href="#find"><strong>Find</strong></a></li>
+<li><a href="#configure"><strong>Configure</strong></a></li>
+<li><a href="#differentiate"><strong>Differentiate</strong></a></li>
+<li><a href="#pipes"><strong>Pipes</strong></a></li>
+<li><a href="#make"><strong>Make</strong></a></li>
+</ul>
+</li>
+<li><a href="#week-3"><strong>Week 3</strong></a>
+<ul>
+<li><a href="#maths"><strong>Maths</strong></a></li>
+<li><a href="#variables"><strong>Variables</strong></a></li>
+<li><a href="#arguments"><strong>Arguments</strong></a></li>
+<li><a href="#user-input-read"><strong>User input - read</strong></a></li>
+<li><a href="#logic-and-ifelse"><strong>Logic and If/Else</strong></a></li>
+<li><a href="#conditional-expressions-expression-"><strong>Conditional expressions: [[ expression ]]</strong></a></li>
+<li><a href="#if-and-else"><strong>if and else</strong></a></li>
+<li><a href="#arrays"><strong>Arrays</strong></a></li>
+<li><a href="#braces"><strong>Braces</strong></a></li>
+<li><a href="#loops"><strong>Loops</strong></a></li>
+<li><a href="#writing-functions"><strong>Writing Functions</strong></a></li>
+<li><a href="#getting-values-from-functions"><strong>Getting values from functions</strong></a></li>
+<li><a href="#writing-programs"><strong>Writing Programs</strong></a></li>
+</ul>
+</li>
+<li><a href="#week-4"><strong>Week 4</strong></a>
+<ul>
+<li><a href="#git-and-github"><strong>Git and GitHub</strong></a></li>
+<li><a href="#important-git-features"><strong>Important Git Features</strong></a></li>
+<li><a href="#nephology"><strong>Nephology</strong></a></li>
+<li><a href="#start-building"><strong>Start Building</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="the-unix-workbench"><strong>The UNIX workbench</strong></h1>
+<h2 id="week-1"><strong>Week 1</strong></h2>
+<h3 id="command-line-basics"><strong>Command line basics</strong></h3>
+<p>Notion of absolute/relative path, cd, ~/, / (<strong>root</strong> level), pwd, ls</p>
+<h3 id="creation--inspection"><strong>Creation &amp; Inspection</strong></h3>
+<pre><code>wc lines, words, bytes # -n option for displaying line numbers
+</code></pre>
+<h3 id="migration--destruction"><strong>Migration &amp; Destruction</strong></h3>
+<pre><code>echo, touch, mkdir, cat
+
+(con**cat**enate, try with 2 arguments)
+</code></pre>
+<ul>
+<li>
+<p>&gt;, &gt;&gt; to add a line to a (non)empty file and to append at the end, respectively.</p>
+</li>
+<li>
+<p>Consider moving files to either ~/.local/share/Trash/ (Linux) or ~/.Trash/ (Mac)</p>
+</li>
+</ul>
+<h2 id="week-2"><strong>Week 2</strong></h2>
+<h3 id="self-help"><strong>Self-help</strong></h3>
+<pre><code>  man &lt;command&gt; #/ to initiate a search, n to move to the next occurrence, Shift + n to move to the previous one.
+
+  info
+
+  apropos
+</code></pre>
+<h3 id="wildcards"><strong>Wildcards</strong></h3>
+<p>* for zero or more of any character.</p>
+<h3 id="character-sets"><strong>Character sets</strong></h3>
+<pre><code>egrep -v #option for inverted match
+</code></pre>
+<h3 id="search-regular-expressions"><strong>Search: Regular expressions</strong></h3>
+<p>Regular expressions are strings that define patterns.</p>
+<p>The real power of regular expressions comes form using metacharacters.</p>
+<pre><code>egrep
+</code></pre>
+<ul>
+<li>
+<p>Capture groups</p>
+</li>
+<li>
+<p>Escaping-anchors-odds-and-ends</p>
+</li>
+</ul>
+<p>There’s a mnemonic that I love for remembering which metacharacter to use for each anchor:</p>
+<blockquote>
+<p><strong>“First you get the power, then you get the money.”</strong></p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>Metacharacter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>Any Character</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>A Word</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>Not a Word</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>A Digit</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>Not a Digit</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>Whitespace</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>Not Whitespace</td>
+</tr>
+<tr>
+<td>[def]</td>
+<td>A Set of Characters</td>
+</tr>
+<tr>
+<td>[^def]</td>
+<td>Negation of Set</td>
+</tr>
+<tr>
+<td>[e-q]</td>
+<td>A Range of Characters</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Beginning of String</td>
+</tr>
+<tr>
+<td>$</td>
+<td>End of String</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>Newline</td>
+</tr>
+<tr>
+<td>+</td>
+<td>One or More of Previous</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Zero or More of Previous</td>
+</tr>
+<tr>
+<td>?</td>
+<td>Zero or One of Previous</td>
+</tr>
+<tr>
+<td>|</td>
+<td>Either the Previous or the Following</td>
+</tr>
+<tr>
+<td>{6}</td>
+<td>Exactly 6 of Previous</td>
+</tr>
+<tr>
+<td>{4, 6}</td>
+<td>Between 4 and 6 or Previous</td>
+</tr>
+<tr>
+<td>{4, }</td>
+<td>More than 4 of Previous</td>
+</tr>
+</tbody>
+</table><p><a href="http://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp).</a></p>
+<h3 id="find"><strong>Find</strong></h3>
+<pre><code>find # &lt;directory where to look&gt; -method (ie. -name) "filename.ext"
+</code></pre>
+<h4 id="summary">Summary</h4>
+<ul>
+<li>
+<p><strong>grep and egrep</strong> can be used along with regular expressions to search for patterns of text in a file.</p>
+</li>
+<li>
+<p>Metacharacters are used in regular expressions to describe patterns of characters.</p>
+</li>
+<li>
+<p><strong>find</strong> can be used to search for the names of files in a directory.</p>
+</li>
+</ul>
+<h4 id="exercises">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled="">  Search states.txt and canada.txt for lines that contain the word “New”.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Make five text files containing the names of states that don’t contain one of each of the five vowels.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled="">  Download the GitHub repository for this book and find out how many .html files it contains.</p>
+</li>
+</ul>
+<h3 id="configure"><strong>Configure</strong></h3>
+<p><strong>History</strong></p>
+<pre><code>history
+
+head -n 5 ~/.bash_history
+
+grep "some_string" ~/.bash_history
+</code></pre>
+<p><strong>Customizing bash</strong></p>
+<pre><code>alias docs='cd ~/Documents'
+
+alias edbp='nano ~/.bash_profile'
+
+source ~/.bash_profile
+
+history displays what commands we’ve entered into the console since opening our current terminal.
+</code></pre>
+<h4 id="summary-1">Summary</h4>
+<ul>
+<li>
+<p>The ~/.bash_history file lists commands we’ve used in the past.</p>
+</li>
+<li>
+<p>alias creates a command that can be used as a substitute for a longer command that we use often.</p>
+</li>
+<li>
+<p>The ~/.bash_profile is a text file that is run every time we start a shell, and it’s the best place to assign aliases.</p>
+</li>
+</ul>
+<h3 id="differentiate"><strong>Differentiate</strong></h3>
+<ul>
+<li>
+<p><strong>diff &amp; sdiff</strong></p>
+<pre><code>diff four.txt six.txt
+sdiff four.txt six.txt
+</code></pre>
+</li>
+</ul>
+<h3 id="pipes"><strong>Pipes</strong></h3>
+<ul>
+<li>The pipe ( | ) takes the output of the program on its left side and directs it to be the input for the program on its right side.</li>
+</ul>
+<h4 id="exercises-1">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Use pipes to figure out how many US states contain the word “New.”</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Examine your ~/.bash_history to try to figure out how many unique commands you’ve ever used. (You may need to look up how to use the uniq and sort commands).</p>
+</li>
+</ul>
+<h3 id="make"><strong>Make</strong></h3>
+<p>How to install programs on UNIX? 1. Download and/or extract into a directory, 2. cd into that directory 3. Run make</p>
+<p>Concept of makefile : a file that describes the relationships bewteen different files and programs. In addition to installing programs, make is also useful for creating documents automatically.</p>
+<pre><code>[target]: [dependencies...]
+  [commands...]
+</code></pre>
+<p><a href="http://makefiletutorial.com">Makefile Tutorial by Example</a></p>
+<h4 id="summary-2">Summary</h4>
+<ul>
+<li>
+<p>make is a tool for creating relationships between files and programs, so that files that depend on other files can be automatically rebuilt.</p>
+</li>
+<li>
+<p>makefiles are text files that contain a list of rules.</p>
+</li>
+<li>
+<p>Rules are made up of targets (files to be built), commands (a list of bash commands that build the target), and dependencies (files that the target depends on to be built).</p>
+</li>
+</ul>
+<h2 id="week-3"><strong>Week 3</strong></h2>
+<h3 id="maths"><strong>Maths</strong></h3>
+<ul>
+<li>
+<p>The * (multiplication) operator must be escaped, otherwise bash thinks we’re trying to define a RegExp.</p>
+</li>
+<li>
+<p>/ is for integer division, ie.  always rounded down to the nearest integer</p>
+<pre><code>expr 1 / 3
+
+bc (**b**ench **c**alculator) is for complex maths
+</code></pre>
+</li>
+</ul>
+<h4 id="summary-3">Summary</h4>
+<ul>
+<li>
+<p>Bash programs are executed in order from the first line in a file until the last line.</p>
+</li>
+<li>
+<p>Anything written after a pound sign (#) is a comment and is not executed by Bash.</p>
+</li>
+<li>
+<p>You can do simple arithmetic with the <strong>expr</strong> command.</p>
+</li>
+<li>
+<p>Perform more complicated arithmetic by piping a string expression into bc using echo.</p>
+</li>
+</ul>
+<h4 id="exercises-2">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Look at the man pages for bc.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Try doing some math in bc interactively.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Try writing some equations in a file and then provide that file as an argument to bc.</p>
+</li>
+</ul>
+<h3 id="variables"><strong>Variables</strong></h3>
+<p>Make sure you follow these rules when you’re naming variables:</p>
+<ul>
+<li>
+<p>Every character should be lowercase.</p>
+</li>
+<li>
+<p>The variable name should start with a letter.</p>
+</li>
+<li>
+<p>The name should only contain alphanumeric characters and underscores.</p>
+</li>
+<li>
+<p>Words in the name should be separated by underscores.</p>
+</li>
+</ul>
+<p>If you follow those rules then you can avoid accidentally overwriting data stored in environmental variables.</p>
+<pre><code>chapter_number=5
+echo $chapter_number
+
+let chapter_number=$chapter_number+1
+echo $chapter_number
+
+the_empire_state="New York"
+echo $the_empire_state
+
+math_lines=$(cat math.sh | wc -l)
+echo $
+
+echo "I went to school in $the_empire_state."
+</code></pre>
+<h3 id="arguments"><strong>Arguments</strong></h3>
+<pre><code>#!/usr/bin/env bash
+#File: vars.sh
+
+echo "Script arguments: $@"
+echo "First arg: $1. Second arg: $2."
+echo "Number of arguments: $#"
+</code></pre>
+<h4 id="summary-4">Summary</h4>
+<ul>
+<li>
+<p>Variables can be assigned with the equal sign ( = ) operator.</p>
+</li>
+<li>
+<p>Strings or numbers can be assigned to variables.</p>
+</li>
+<li>
+<p>The value of a variable can be accessed with the dollar sign ( $ ) before the variable name.</p>
+</li>
+<li>
+<p>You can use the dollar sign and parentheses syntax (command substitution) to execute a command and save the output in a variable.</p>
+</li>
+<li>
+<p>You can access command line arguments within your own scripts using the dollar sign followed by the number of the argument.</p>
+</li>
+</ul>
+<h4 id="exercises-3">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Write a Bash program where you assign two numbers to different variables, and then the program prints the sum of those variables.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Write another Bash program where you assign two strings to different variables, and then the program prints both of those strings. Write a version where the strings are printed on the same line, and a version where the strings are printed on different lines.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Write a Bash program that prints the number of arguments provided to that program multiplied by the first argument provided to the program.</p>
+</li>
+</ul>
+<h3 id="user-input---read"><strong>User input - read</strong></h3>
+<p><strong>read</strong> stores a string that the user provides in a variable.</p>
+<pre><code>#!/usr/bin/env bash
+#file letsread.sh
+
+echo "Type in a string and then press Enter:"
+read response
+echo "You entered: $response"
+</code></pre>
+<h4 id="exercises-4">Exercises</h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a script that asks the user for an adjective, a noun, and a verb, and then use those words in a sentence (like Mad Libs).</li>
+</ul>
+<h3 id="logic-and-ifelse"><strong>Logic and If/Else</strong></h3>
+<p>When writing computer programs it is often useful for your program to be able to make decisions based on inputs like arguments, files, and environmental variables.</p>
+<pre><code>true
+false
+</code></pre>
+<h4 id="notion-of-exit-status">Notion of exit status:</h4>
+<pre><code>echo $?
+</code></pre>
+<h4 id="logical-operators---and----or-">Logical operators: &amp;&amp; ( AND ), || ( OR )</h4>
+<p><strong>In a series of programs joined together by AND operators, any programs to the right of a program that has a non-zero exit status is not executed.</strong></p>
+<p><strong>Commands on the right hand side of || are only executed if the command on the left hand side fails and therefore has an exit status other than 0.</strong></p>
+<p>You can combine AND and OR operators in commands, which are evaluated from left to right.</p>
+<p>By combining AND and OR operators you can precisely control the conditions for when certain commands should be executed.</p>
+<h3 id="conditional-expressions--expression-"><strong>Conditional expressions: [[ expression ]]</strong></h3>
+<h4 id="notion-of-conditional-expression">Notion of conditional expression</h4>
+<p>Enabling your Bash script to make decisions is extremely useful.</p>
+<p>Conditional execution allows you to control the circumstances where certain programs are executed based on whether those programs succeed or fail, but you can also construct conditional expressions which are logical statements that are either equivalent to true or false.</p>
+<p>Conditional expressions either compare two values, or they ask a question about one value. Conditional expressions are always between double brackets ([[ ]]), and they either use logical flags or logical operators.</p>
+<p><strong>Tip to quickly look at the resulting value of a logical expression:</strong></p>
+<pre><code>[[ 4 -gt 3 ]] &amp;&amp; echo t || echo f
+[[ 3 -gt 4 ]] &amp;&amp; echo t || echo f
+</code></pre>
+<h4 id="binary-logical-expression-vs.-unary-logical-expressions">Binary logical expression vs. Unary logical expressions</h4>
+<ul>
+<li><strong>Logical flags</strong></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Logical Flag</th>
+<th>Meaning</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-gt</td>
+<td>Greater Than</td>
+<td>[[ $planets -gt 8 ]]</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>Greater Than or Equal To</td>
+<td>[[ $votes -ge 270 ]]</td>
+</tr>
+<tr>
+<td>-eq</td>
+<td>Equal</td>
+<td>[[ $fingers -eq 10 ]]</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>Not Equal</td>
+<td>[[ $pages -ne 0 ]]</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>Less Than or Equal To</td>
+<td>[[ $candles -le 9 ]]</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>Less Than</td>
+<td>[[ $wives -lt 2 ]]</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>A File Exists</td>
+<td>[[ -e $taxes_2016 ]]</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>A Directory Exists</td>
+<td>[[ -d $photos ]]</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>Length of String is Zero</td>
+<td>[[ -z $name ]]</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>Length of String is Non-Zero</td>
+<td>[[ -n $name ]]</td>
+</tr>
+</tbody>
+</table><ul>
+<li><strong>Logical operators</strong></li>
+</ul>
+<p>One of the most useful logical operators is the regex match operator =~</p>
+
+<table>
+<thead>
+<tr>
+<th>Logical Operator</th>
+<th>Meaning</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=~</td>
+<td>Matches Regular Expression</td>
+<td>[[ $consonants =~ [aeiou] ]]</td>
+</tr>
+<tr>
+<td>=</td>
+<td>String Equal To</td>
+<td>[[ $password = “pegasus” ]]</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>String Not Equal To</td>
+<td>[[ $fruit != “banana” ]]</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Not</td>
+<td>[[ ! “apple” =~ ^b ]]</td>
+</tr>
+</tbody>
+</table><h3 id="if-and-else"><strong>if and else</strong></h3>
+<pre><code>#!/usr/bin/env bash
+# File: simpleif.sh
+
+echo "Start program"
+
+if [[ $1 -eq 4 ]]
+then
+  echo "You entered $1"
+fi
+
+echo "End program"
+</code></pre>
+<p>You should also know that you can combine conditional execution, conditional expressions, and IF/ELIF/ELSE statements. The conditional execution operators AND ( &amp;&amp; ) and OR ( || ) can be used in an IF or ELIF statement.</p>
+<pre><code>#!/usr/bin/env bash
+# File: condexif.sh
+
+if [[ $1 -gt 3 ]] &amp;&amp; [[ $1 -lt 7 ]]
+then
+  echo "$1 is between 3 and 7"
+elif [[ $1 =~ "Jeff" ]] || [[ $1 =~ "Roger" ]] || [[ $1 =~ "Brian" ]]
+then
+  echo "$1 works in the Data Science Lab"
+else
+  echo "You entered: $1, not what I was looking for."
+fi
+</code></pre>
+<p>The conditional execution operators work just like they would on the command line. If the entire conditional expression evaluates to the equivalent of truethen the code within the IF statement is executed, otherwise it is skipped.</p>
+<p>Finally we should note that IF/ELIF/ELSE statements can be nested inside of other IF statements.</p>
+<pre><code>#!/usr/bin/env bash
+# File: nested.sh
+
+if [[ $1 -gt 3 ]] &amp;&amp; [[ $1 -lt 7 ]]
+then
+if [[ $1 -eq 4 ]]
+then
+echo "four"
+elif [[ $1 -eq 5 ]]
+then
+echo "five"
+else
+echo "six"
+fi
+else
+echo "You entered: $1, not what I was looking for."
+fi
+</code></pre>
+<p>In order to get to the inner IF statement, the conditions for the outer IF statement must be met first (the first argument for the script must be between 3 and 7). As you can see combining variables, arguments, conditional expressions, and IF statements allow you to write more powerful Bash programs.</p>
+<h4 id="summary-5">Summary</h4>
+<ul>
+<li>
+<p>All Bash programs have an exit status. true has an exit status of 0 and false has an exit status of 1.</p>
+</li>
+<li>
+<p>Conditional execution uses two operators: AND ( &amp;&amp; ) and OR ( || ) which you can use to control what command get executed based on their exit status.</p>
+</li>
+<li>
+<p>Conditional expressions are always in double brackets ([[ ]]). They have exit an exit status of 0 if they contain a true assertion or 1 if they contain a false assertion.</p>
+</li>
+<li>
+<p>IF statements evaluate conditional expressions. If an expression is true then the code within an IF statement is executed, otherwise it is skipped.</p>
+</li>
+<li>
+<p>ELIF and ELSE statements also help control the flow of a Bash program, and IF statements can be nested within other IF statements.</p>
+</li>
+</ul>
+<h4 id="exercises-5">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a Bash script that takes a string as an argument and prints “how proper” if the string starts with a capital letter.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a Bash script that takes one argument and prints “even” if the first argument is an even number or “odd” if the first argument is an odd number.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a Bash script that takes two arguments. If both arguments are numbers, print their sum, otherwise just print both arguments.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a Bash script that prints “Thank Moses it’s Friday” if today is Friday. (Hint: take a look at the date program).</p>
+</li>
+</ul>
+<h3 id="arrays"><strong>Arrays</strong></h3>
+<pre><code>plagues=(blood frogs lice flies sickness boils hail locusts darkness death)
+
+echo ${plagues[0]}
+echo ${plagues[3]}
+
+echo ${plagues[*]} # get all array elements
+
+echo ${plagues[*]}
+plagues[4]=disease # change an individual elements in the array by specifying their index with square brackets
+echo ${plagues[*]}
+</code></pre>
+<h4 id="summary-6">Summary</h4>
+<ul>
+<li>
+<p>Arrays are a linear data structure with ordered elements which can be stored in variables.</p>
+</li>
+<li>
+<p>The each element of an array has an index and the first index is 0.</p>
+</li>
+<li>
+<p>Individual elements of an array can be accessed using their index.</p>
+</li>
+</ul>
+<h4 id="exercises-6">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Write a bash script where you define an array inside of the script, and the first argument for the script indicates the index of the array element that is printed to the console when the script is run.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a bash script where you define two arrays inside of the script, and the sum of the lengths of the arrays are printed to the console when the script is run.</p>
+</li>
+</ul>
+<h3 id="braces"><strong>Braces</strong></h3>
+<p>Brace expansion uses the curly brackets and two periods ({ … }) to create a sequence of letters or numbers:</p>
+<pre><code>echo {0..9}
+echo {a..e}
+echo {W..Z}
+</code></pre>
+<p>You can put strings on either side of the curly brackets and they’ll be “pasted” onto the corresponding end of the sequence:</p>
+<pre><code>echo a{0..4}
+echo b{1..3}c
+</code></pre>
+<p>You can also combine sequences so that two or more sequences are pasted together:</p>
+<pre><code>echo {1..3}{A..C}
+</code></pre>
+<p>If you want to use variables in order to define a sequence you need to use the <strong>eval</strong> command in order to create the sequence:</p>
+<pre><code>start=4
+end=9
+echo {$start..$end}
+eval echo {$start..$end}
+</code></pre>
+<p>In fact you can do this with any number of strings:</p>
+<pre><code>echo {Who, What, Why, When, How}?
+</code></pre>
+<h4 id="summary-7">Summary</h4>
+<ul>
+<li>
+<p>Braces allow you create string sequences and expansions.</p>
+</li>
+<li>
+<p>To use variables with braces you need to use the eval command.</p>
+</li>
+</ul>
+<h4 id="exercises-7">Exercises</h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> Create 100 text files using brace expansion.</li>
+</ul>
+<h3 id="loops"><strong>Loops</strong></h3>
+<p>Loops allow you to repeat lines of code based on logical conditions or by following a sequence.</p>
+<h4 id="for-loops"><strong>FOR loops</strong></h4>
+<p>Valid sequences include brace expansions, explicit lists of strings, arrays, and command substitutions, see <a href="http://manyloops.sh">manyloops.sh</a></p>
+<h4 id="while-loops"><strong>WHILE loops</strong></h4>
+<p>The WHILE loop combines parts of the FOR loop and the IF statement, see <a href="http://whileloop.sh">whileloop.sh</a></p>
+<pre><code>  !/usr/bin/env bash
+  # File: whileloop.sh
+</code></pre>
+<p>The WHILE loop begins first with the while keyword followed by a conditional expression. As long as the conditional expression is equivalent to true when an iteration of the loop begins, then the code within the WHILE loop will continue to be executed.</p>
+<p>If the logical expression is never equivalent to false then we’ve created an infinite loop.</p>
+<p>By changing the value of the variable in the logical expression inside of the loop we’re able to ensure that the logical expression will eventually be equivalent to false, and therefore the loop will eventually end.</p>
+<p><strong>Control + C</strong> breaks out of an infinite loop, or any running program.</p>
+<h4 id="nesting"><strong>Nesting</strong></h4>
+<p>Just like IF statements for and while loops can be nested within each other.</p>
+<p>Besides nesting loops within each other you can also nest loops within IF statements and IF statements within loops, see <a href="http://ifloop.sh">ifloop.sh</a></p>
+<p>There are endless combinations for nesting IF statements and loops, but <strong>one good rule of thumb you should remember is that your nesting should never go more than two or possibly three layers deep</strong>. If you find yourself writing code with lots of nesting, you should consider restructuring your program. Deeply nested code is difficult to read and even more difficult to debug if your program contains mistakes.</p>
+<h4 id="summary-8">Summary</h4>
+<ul>
+<li>
+<p>Loops allows you repeat sections of your program.</p>
+</li>
+<li>
+<p>FOR loops iterate through a sequence so that a variable that you assign takes on the value of every element of the sequence in every iteration of the loop.</p>
+</li>
+<li>
+<p>WHILE loops check a conditional statement at the beginning of every iteration. If the condition is equivalent to true then one iteration of the loop is executed and then the conditional statement is checked again. Otherwise the loop ends.</p>
+</li>
+<li>
+<p>IF statements and loops can be nested in order to make more powerful programming structures.</p>
+</li>
+</ul>
+<h4 id="exercises-8">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write serval programs with three levels of nesting and include FOR loops, WHILE loops, and IF statements. Before you run your program try to predict what your program is going to print. If the result is different from your prediction try to figure out why.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Enter the yes command into the console, then stop the program from running. Take a look at the man page for yes to learn more about the program.</p>
+</li>
+</ul>
+<h3 id="writing-functions"><strong>Writing Functions</strong></h3>
+<p>A function is a small piece of code that has a name. Writing functions allows us to re-use the same code multiple times across programs.</p>
+<pre><code>#!/usr/bin/env bash
+# File: ntmy.sh
+
+function ntmy {
+echo "Nice to meet you $1"
+}
+</code></pre>
+<p>The <strong>source</strong> command, which allows us to use function definitions in bash scripts as command line commands.</p>
+<pre><code>source ntmy.sh
+ntmy Benjo
+&gt; Nice to meet you Benjo
+</code></pre>
+<p>Once you close your current shell you’ll lose access to the ntmy command, but in the next section we’ll discuss how to set up your own commands so that you always have access to them.</p>
+<p>Example: create a function that allows to add up a sequence of numbers of arbitrary length.</p>
+<p>It’s important to break down a larger goal into a series of individual components before writing a program, that way we more easily can identify which features and tools will be required.</p>
+<pre><code>#!/usr/bin/env bash
+# File: addseq.sh
+
+function addseq {
+sum=0
+
+for element in $@
+do
+ let sum=sum+$element
+done
+
+echo $sum
+}
+
+source addseq.sh
+
+addseq 10 90 3
+addseq 0 1 1 2 3 5 8 13
+</code></pre>
+<h3 id="getting-values-from-functions"><strong>Getting values from functions</strong></h3>
+<p>Functions are used for two primary purposes: computing values and side effects.</p>
+<p>A side effect occurs whenever a function (or a command) creates or changes files on our computer. These commands don’t print any value if they succeed.</p>
+<p>When you create variables in functions those <strong>variables become globally accessible</strong>, meaning that even after the program is finished that variable retains its value in your shell.</p>
+<p>This is an example of one strategy we can use to retrieve values that a function has calculated. Unfortunately this approach is problematic because it changes the values of variables that we might be using in our shell.</p>
+<p>In order to avoid this problem it’s important that we use the <strong>local</strong> keyword when assigning variables within a function. The local keyword ensures that variables outside of our function are not overwritten by our function.</p>
+<h4 id="summary-9">Summary</h4>
+<ul>
+<li>
+<p>Functions start with the function keyword followed by the name of the function and curly brackets ( {} ).</p>
+</li>
+<li>
+<p>Functions are small, reusable pieces of code that behave just like commands.</p>
+</li>
+<li>
+<p>You can use variables like $1, $2, and $@ in order to provide arguments to functions, just like a Bash script.</p>
+</li>
+<li>
+<p>Use the <strong>source</strong> command in order to read in a Bash script with function definitions so that you can use your functions in your shell.</p>
+</li>
+<li>
+<p>Use the <strong>local</strong> keyword to prevent your function from creating or modifying global variables.</p>
+</li>
+<li>
+<p>Be sure to <strong>echo</strong> the results of your function (if there are any) so that they can be captured with command substitution.</p>
+</li>
+</ul>
+<h4 id="exercises-9">Exercises</h4>
+<p>Below this list of exercises you can find examples of how these programs should work when used on the command line.</p>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a function called plier which multiplies together a sequence of numbers.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a function called isiteven that prints 1 if a number is even or 0 a number is not even.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a function called nevens which prints the number of even numbers when provided with a sequence of numbers. Use isiteven when writing this function.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a function called howodd which prints the percentage of odd numbers in a sequence of numbers. Use nevens when writing this function.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a function called fib which prints the number of fibonacci numbers specified.</p>
+</li>
+</ul>
+<h3 id="writing-programs"><strong>Writing Programs</strong></h3>
+<h4 id="the-unix-philosophy"><strong>The Unix Philosophy</strong></h4>
+<p>Unix tools were designed along a set of guidelines which are best summarized by Ken Thompson’s idea that each Unix program should do one thing well. Following this rule when writing functions and programs accomplished several goals:</p>
+<ul>
+<li>
+<p>Limiting a program to only doing one thing reduces the length of the program, and the shorter a program is the easier it is to fix if it contains bugs or if it needs to be revised.</p>
+</li>
+<li>
+<p>Writing short programs also helps the users of your code understand what’s going on in your code in the event that they need to read your code. Reading a poem induces a different cognitive load compared to reading a novel.</p>
+</li>
+<li>
+<p>Folks who don’t read the source code of your program (most users won’t - they shouldn’t have to) will be able to understand the inputs, outputs, and side effects of your program more easily.</p>
+</li>
+<li>
+<p>Using small programs to write a new program will increase the likelihood that the new program will also be small. Composability is the concept of stringing small programs together to create a new program.</p>
+</li>
+</ul>
+<p>The concept of <strong>composability</strong> in Unix is best illustrated by the use of the pipe operator ( <strong>|</strong> ) for creating pipelines of programs. When you’re considering what inputs your program is going to have and what your program is going to print to the console you should consider whether or not your program might be used in a pipeline, and you should organize your program accordingly.</p>
+<p>In the previous section we discussed the difference between <strong>functions that compute values</strong> and <strong>functions that produce side effects</strong>. You should notice that the side effect functions like <strong>mv</strong> and <strong>cp</strong> do not print any text to the console if they are successful.</p>
+<p>The concept of <strong>quietness</strong> is another important part of the Unix philosophy. Quietness in this case means that a function should not print to the console unless it is necessary, either to inform the user of a value (<strong>pwd</strong>), to display the result of a computation (<strong>bc</strong>), or to warn the user that an error has occurred.</p>
+<h4 id="making-programs-executable---permissions"><strong>Making programs executable - Permissions</strong></h4>
+<p>The chmod command takes two arguments. The first argument is a string which specifies how we’re going to change permissions for a file, and the second argument is the path to the file. The first argument has to be composed in a very specific way. First we can specify which set of users we’re going to change permissions for:</p>
+<pre><code>chmod u+x some_file.text
+</code></pre>
+<p>We then need to specify whether we’re going to add, remove, or set the permission:</p>
+
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u</td>
+<td>The owner of the file</td>
+</tr>
+<tr>
+<td>g</td>
+<td>The group that the file belongs to</td>
+</tr>
+<tr>
+<td>o</td>
+<td>Everyone else</td>
+</tr>
+<tr>
+<td>a</td>
+<td>Everyone above</td>
+</tr>
+</tbody>
+</table><p>We then need to specify whether we’re going to add, remove, or set the permission:</p>
+
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Add permission</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Remove permission</td>
+</tr>
+<tr>
+<td>=</td>
+<td>Set permission</td>
+</tr>
+</tbody>
+</table><p>Finally we specify what permission we’re changing:</p>
+
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td>Read a file</td>
+</tr>
+<tr>
+<td>w</td>
+<td>Write to or edit a file</td>
+</tr>
+<tr>
+<td>x</td>
+<td>Execute a file</td>
+</tr>
+</tbody>
+</table><p>To run an executable file we need to specify the path to the file, even if the path is in the current directory, meaning we need to prepend ./ to a program.</p>
+<pre><code>Symbolic:  r-- -w- --x  |  421
+Binary:    100 010 001  |  -------
+Decimal:    4   2   1   |  000 = 0
+                        |  001 = 1
+Symbolic:  rwx r-x r-x  |  010 = 2
+Binary:    111 101 101  |  011 = 3
+Decimal:    7   5   5   |  100 = 4
+           /   /   /    |  101 = 5
+Owner  ---/   /   /     |  110 = 6
+Group  ------/   /      |  111 = 7
+Others ---------/       |  Binary to Octal chart
+</code></pre>
+<h4 id="environmental-variables"><strong>Environmental variables</strong></h4>
+<p>An environmental variable is a variable that Bash creates where data about your current computing environment is stored. Environmental variable names use all capitalized letters.</p>
+<pre><code>echo $HOME
+echo $PWD
+echo $PATH
+</code></pre>
+<h4 id="summary-10">Summary</h4>
+<ul>
+<li>
+<p>According to the Unix Philosophy you should keep your programs short, simple, and quiet.</p>
+</li>
+<li>
+<p>Use chmod to make your programs executable.</p>
+</li>
+<li>
+<p>You can modify your ~/.bash_profile in order to make scripts and functions available to use on the command line.</p>
+</li>
+<li>
+<p>Use export to change an environmental variable.</p>
+</li>
+</ul>
+<h4 id="exercises-10">Exercises</h4>
+<p>Below this list of exercises you can find examples of how the programs described here should work when used on the command line.</p>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled="">  Make a script executable.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled="">  Put that script in a directory that you create and make that directory part of your PATH.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a program called range that takes one number as an argument and prints all of the numbers between that number and 0.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Write a program called extremes which prints the maximum and minimum values of a sequence of numbers.</p>
+</li>
+</ul>
+<h2 id="week-4"><strong>Week 4</strong></h2>
+<h3 id="git-and-github"><strong>Git and GitHub</strong></h3>
+<h4 id="git-and-github-basics"><strong>Git and GitHub Basics</strong></h4>
+<pre><code>git --version
+git config --list
+
+git config --global user.name "myUserName"
+git config --global user.email "myUserName@myHost.net"
+</code></pre>
+<p>First we need to create a directory:</p>
+<pre><code>cd
+mkdir my-first-repository
+cd my-first-repository
+
+git init
+echo "Welcome to My First Repo" &gt; readme.txt
+git status
+
+git add readme.txt
+
+git status
+
+git rm --cached readme.txt
+
+git add readme.txt
+
+git commit -m "added readme.txt"
+
+git status
+touch file1.txt
+touch fil2.txt
+
+echo "Learning Git is going well so far." &gt;&gt; readme.txt
+
+git status
+</code></pre>
+<p>If we want to track all of the changes to all of the files in our directory we should use the command git add -A.</p>
+<pre><code>git add -A
+git status
+git commit -m "added two files"
+</code></pre>
+<p>We made a typo! Let’s fix it.</p>
+<pre><code>git reset --soft HEAD~
+git status
+
+mv fil2.txt file2.txt
+git status
+
+git add -A
+git status
+
+git commit -m "added two files"
+</code></pre>
+<h4 id="summary-11">Summary</h4>
+<ul>
+<li>
+<p>Git tracks changes to plain text files (code files and text documents).</p>
+</li>
+<li>
+<p>A directory where changes to files are tracked by Git is called a Git repository.</p>
+</li>
+<li>
+<p>Change your working directory, then run <strong>git init</strong> to start a repository.</p>
+</li>
+<li>
+<p>You can track changes to a file using <strong>git add</strong> [names of files].</p>
+</li>
+<li>
+<p>You can create a milestone about the state of your files using <strong>git commit -m</strong> “message about changes since the last commit”.</p>
+</li>
+<li>
+<p>To examine the state of files in your repository use <strong>git status</strong>.</p>
+</li>
+</ul>
+<h4 id="exercises-11">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Start a repository in a new directory.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Create a new file in your new Git repository.</p>
+</li>
+<li>
+<p>[ ]	Make sure Git is tracking the file and then create a new commit.Make changes to the file, and then commit these changes.</p>
+</li>
+<li>
+<p>[ ]	Add two new files to your repository, but only commit one of them.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> What is the status of your repository after the commit? Undo the last commit, add the untracked file, and redo the commit.</p>
+</li>
+</ul>
+<h3 id="important-git-features"><strong>Important Git Features</strong></h3>
+<h4 id="gitting-help-logs-and-diffs"><strong>Gitting Help, Logs and Diffs</strong></h4>
+<pre><code>git help status
+
+git log
+
+echo "The third line." &gt;&gt; readme.txt
+git diff readme.txt
+</code></pre>
+<p>A plus sign shows up next to the added line</p>
+<pre><code>nano readme.txt
+# Delete the second line
+git diff readme.txt
+</code></pre>
+<p>A minus sign appears next to the line we deleted.</p>
+<pre><code>git status
+
+git checkout
+</code></pre>
+<p>The changes made to readme.txt have been undone.</p>
+<h4 id="ignoring-files"><strong>Ignoring files</strong></h4>
+<pre><code>touch toby.jpg
+git status
+
+echo "*.jpg" &gt; .gitignore
+git status
+
+git add -A
+git commit -m "added gitignore"
+
+touch bernie.jpg
+git status
+</code></pre>
+<h4 id="summary-12">Summary</h4>
+<ul>
+<li>
+<p><strong>git help</strong> allows you to read the man pages for specific Git commands.</p>
+</li>
+<li>
+<p><strong>git log</strong> will show you your commit history.</p>
+</li>
+<li>
+<p><strong>git diff</strong> displays what has changed between the last commit and your current untracked changes.</p>
+</li>
+<li>
+<p>You can specify a <strong>.gitignore</strong> file in order to tell Git not to track certain files.</p>
+</li>
+</ul>
+<h4 id="exercises-12">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Look at the help pages for git log and git diff.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Add to the .gitignore you already started to include a specific file name, then add that file to your repository.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Create a file that contains the Git log for this repository. Use grep to see which day of the week most of the commits occurred on.</p>
+</li>
+</ul>
+<h4 id="branching"><strong>Branching</strong></h4>
+<p>Creating different Git branches allows you to work on a particular feature or set of files independently from other “copies” of a repository.</p>
+<p>You can list all of the available branches with the command git branch:</p>
+<pre><code>git branch
+</code></pre>
+<p>The star ( * ) indicates which branch you’re currently on. The default branch that is created is always called master. Usually people use this branch as the working version of the software that they are writing, while they develop new and potentially unstable features on other branches.</p>
+<p>To add a branch we’ll also use the git branch command, followed the name of the branch we want to create:</p>
+<pre><code>git branch my_new_feature
+git branch
+</code></pre>
+<p>We can make my-new-feature the current branch using git checkout with the name of the branch:</p>
+<pre><code>git status
+##On branch my-new-feature
+##nothing to commit, working tree clean
+git branch
+</code></pre>
+<p>If we look at git status we can also see that it will tell us which branch we’re on:</p>
+<pre><code>git status
+</code></pre>
+<p>We can switch back to the master branch using git checkout:</p>
+<pre><code>git checkout master
+git branch
+</code></pre>
+<p>Now we can delete a branch by using the -d flag with git branch and the name of the branch we want to delete</p>
+<pre><code>git branch -d my-new-feature
+git branch
+</code></pre>
+<p>We can create a new branch and switch to that branch at the same time using the command git checkout -b and the name of the new branch we want to create:</p>
+<pre><code>git checkout -b update-readme
+</code></pre>
+<p>Now that we’ve created and switched to a new branch, let’s make some changes to a file:</p>
+<pre><code>echo "I added this line in the update-readme branch." &gt;&gt; readme.txt
+cat readme.txt
+</code></pre>
+<p>Now that we’ve added a new line let’s commit these changes:</p>
+<pre><code>git add -A
+git commit -m 'added a thrid line to readme.txt'
+</code></pre>
+<p>Now that we’ve made a commit on the update-readme branch, let’s switch back to the master branch:</p>
+<pre><code>git checkout master
+cat readme.txt
+</code></pre>
+<p>The third line that we added is gone! We committed the change to this file while we were on the update-readme branch, so the updated file is safely in that branch:</p>
+<pre><code>git checkout update-readme
+cat readme.txt
+</code></pre>
+<p>And the third line is back! Let’s add and commit yet another line while we’re on this branch:</p>
+<pre><code>echo "It's sunny outside today." &gt;&gt; readme.txt
+git add -A
+git commit -m "added weather info"
+</code></pre>
+<h4 id="merging"><strong>Merging</strong></h4>
+<p>Now that we’ve made a couple of changes to readme.txt, let’s combine those changes with what we have in the master branch. This is made possible by a Git merge.</p>
+<p>Git incorporates other branches into the <strong>current branch by default</strong>. When you’re merging, the current branch is also called the base branch. Let’s switch to the master branch so we can merge in the changes from the update-readme branch:</p>
+<pre><code>git checkout master
+
+git merge update-readme
+cat readme.txt
+</code></pre>
+<p>What if there are two commits in two separate branches that make different edits to the same line of text? When this occurs it is called a conflict. Let’s create a conflict so we can learn how they can be resolved.</p>
+<pre><code>git checkout update-readme
+nano readme.txt
+cat readme.txt
+
+git add -A
+git commit -m "changed sunny to cloudy"
+
+git checkout master
+nano readme.txt
+cat readme.txt
+git add -A
+git commit -m "changed sunny to windy"
+</code></pre>
+<p>We’ve now created two commits that directly conflict with each other. On the update-readme branch the last line says It’s cloudy outside today., while on the master branch the last line says It’s windy outside today… Let’s see what happens when we try to merge update-readme into master.</p>
+<pre><code>git merge update-readme
+</code></pre>
+<p>Uh-oh, there’s a conflict! Let’s check the status of the repo right now:</p>
+<pre><code>git status
+cat readme.txt
+</code></pre>
+<p>In Git terminology the HEAD represents the most recent commit on the branch which is currently checked out (which is master in this case).</p>
+<pre><code>nano readme.txt
+cat readme.txt
+
+git add -A
+git commit -m "resolved conflict"
+</code></pre>
+<p><a href="https://git-scm.com/book/en/v2">Git Book (open source)</a></p>
+<h4 id="summary-13">Summary</h4>
+<ul>
+<li>
+<p>Git branching allows you and others to work on the same code base together.</p>
+</li>
+<li>
+<p>You can create a branch with the command git branch [name of branch].</p>
+</li>
+<li>
+<p>To switch to a branch use git checkout [name of branch].</p>
+</li>
+<li>
+<p>You can combine a branch with your current branch by using git merge.</p>
+</li>
+</ul>
+<h4 id="exercises-13">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Start a new branch.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Switch to that branch and add commits to it. Switch to an older branch and then merge the new branch into your current branch.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled="">  Purposefully create and resolve a merge conflict.</p>
+</li>
+</ul>
+<h4 id="github"><strong>GitHub</strong></h4>
+<pre><code>git remote
+
+git remote add origin https://github.com/user/repo.git
+</code></pre>
+<p>We’ll need to use the -u flag in order to set origin as the default remote repository so we don’t have to provide its name every time we want to interact with it.</p>
+<pre><code>git push -u origin master
+</code></pre>
+<h4 id="markdown"><strong>Markdown</strong></h4>
+<p>Markdown is a powerful markup language because it’s small, intuitive, and readable when it’s written as plain text. GitHub transforms Markdown files (which end in the file extension .md) into simple HTML web pages in your repository. If there is a file called <a href="http://README.md">README.md</a> in any folder in your repository, then that file is rendered to HTML and displayed on GitHub.</p>
+<p><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a><br>
+<a href="http://jbt.github.com/markdown-editor">Markdown Editor</a></p>
+<h4 id="pull-requests-and-forking"><strong>Pull requests and Forking</strong></h4>
+<p>A pull request allows you to interactively compare two different branches before you merge them so you can either go ahead with the merge or provide feedback to whoever opened the pull request.</p>
+<p>Essentially a pull request allows a person to ask another person if they’re willing to incorporate changes on one branch into another branch.</p>
+<p>This social coding transaction may involve you and a collaborator, you and a stranger, or you might open a pull request on your own repository just as a method of staying organized.</p>
+<p>When working on a remote GitHub repository with many other folks thess pull requests and merges can happen without you being involved at all if the commits effect parts of the code that you’re not working on. Still it’s important to keep your local repository up to date with the latest changes in the remote repository.</p>
+<pre><code>git checkout master
+git pull
+</code></pre>
+<h4 id="github-pages"><strong>GitHub Pages</strong></h4>
+<p><a href="https://pages.github.com/">GitHub Pages</a> allows you to create and host a website on GitHub using only Git and Markdown.</p>
+<h4 id="forking"><strong>Forking</strong></h4>
+<p>Forking a GitHub repository copies somebody else’s GitHub repository into your GitHub account. You can then modify this copy of their software however you like.</p>
+<p>The original source repository (the repository you forked) is often called the upstream repository.</p>
+<pre><code>git clone https://github.com/[your-github-username]/the-unix-workbench.git
+git remote -v
+</code></pre>
+<h4 id="summary-14">Summary</h4>
+<ul>
+<li>
+<p>You can use GitHub you create and host remote Git repositories.<br>
+A remote Git repository is a Git repository that is always connected to the internet.</p>
+</li>
+<li>
+<p>List remote repositories with <strong>git remote</strong>.</p>
+</li>
+<li>
+<p>Add remote repositiories with git remote add [name-of-remote] <a href="https://github.com/%5Busername%5D/%5Brepo-name%5D.git">https://github.com/[username]/[repo-name].git</a></p>
+</li>
+<li>
+<p>Add commits to your remote repository with <strong>git push [name-of-remote] [name-of-branch]</strong> or just git push if you’ve set up a default remote and branch.</p>
+</li>
+<li>
+<p>To merge commits on a remote repository into your local repository use <strong>git pull [name-of-remote] [name-of-branch]</strong> or just git pull if you’ve set up a default remote and branch.</p>
+</li>
+<li>
+<p>A pull request allows you to interactively compare two different branches before you merge them.</p>
+</li>
+<li>
+<p><a href="https://pages.github.com/">GitHub Pages</a> allows you to host websites written in Markdown for free!</p>
+</li>
+<li>
+<p>Forking a repository allows you to make changes to a copy of a public repository. You can then open a pull request if you think your changes should be merged into the upstream repository!</p>
+</li>
+</ul>
+<h4 id="exercises-14">Exercises</h4>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> Create a new repository on GitHub. Clone your repository and add a <a href="http://README.md">README.md</a> file. Push this file to GitHub and create a GitHub Pages website for this repository.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Fork an existing repository (try one of mine <a href="https://github.com/seankross">seankross</a>) and try to identify something valuable you could contribute. Make changes or additions to that repository, then open a pull request.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Read through GitHub’s Guides.</p>
+</li>
+</ul>
+<h3 id="nephology"><strong>Nephology</strong></h3>
+<p>“The cloud is just someone else’s computer”</p>
+<h4 id="nephology-introduction"><strong>Nephology Introduction</strong></h4>
+<p><a href="https://m.do.co/c/530d6cfa2b37">Digital Ocean 2 months free trial</a></p>
+<pre><code>ssh [username]@[IP address]
+
+logout
+</code></pre>
+<h4 id="cloud-computing-basics"><strong>Cloud Computing Basics</strong></h4>
+<ul>
+<li>Moving Files In and Out</li>
+</ul>
+<p>Copy a file and and entire repertory from remote machine to local one:</p>
+<pre><code>scp [username]@[IP address]:path/to/file/on/server path/on/my/computer
+scp -r [username]@[IP address]:path/to/folder/on/server folder/on/my/computer
+</code></pre>
+<p>Copy from local machine to a remote one:</p>
+<pre><code>scp path/on/my/computer [username]@[IP address]:path/to/file/on/server
+</code></pre>
+<ul>
+<li>Talking to other servers</li>
+</ul>
+<p>To download a file with curl, we simply need to provide the -O flag and the URL of the file:</p>
+<pre><code>curl -O http://website.org/textfile.txt
+</code></pre>
+<p>The curl command is also commonly used for communicating with APIs.</p>
+<pre><code>curl https://api.github.com/repos/seankross/the-unix-workbench/languages
+</code></pre>
+<p>HTTP requests &amp; verbs:</p>
+<pre><code>curl http://httpbin.org/get
+</code></pre>
+<p>In the general case we can provide arguments to an HTTP API by putting a question mark (?) after the API’s URL.</p>
+<pre><code>curl http://httpbin.org/get?Baltimore
+</code></pre>
+<p>We can specify an argument’s name with the template [argument name]=[argument value].</p>
+<pre><code>curl http://httpbin.org/get?city=Baltimore
+</code></pre>
+<p>We can add more named arguments by separating them with an ampersand ( &amp; )</p>
+<pre><code>curl "http://httpbin.org/get?city=Baltimore&amp;state=Maryland"
+</code></pre>
+<ul>
+<li>Automating tasks</li>
+</ul>
+<p>One of the most commonly used programs for executing other programs with a regular frequency is called cron.<br>
+First, let’s see if cron is running. We can get a list of all running programs with the ps command while using the -A flag:</p>
+<pre><code>ps -A
+#or better
+ps -A | grep "cron"
+</code></pre>
+<p>In order to assign programs to be executed with cron we need to edit a special text file called the cron table. Before we edit the cron table we need to select the default text editor.</p>
+<pre><code>select-editor
+...
+</code></pre>
+<p>Now that we’ve chosen a text editor we can edit the cron table using the command crontab -e (cron table edit) which will automatically open nano with the appropriate file.</p>
+<pre><code>crontab -e
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  *  user command to be executed]
+</code></pre>
+<p>Star (*) which represents all of the possible values in a column.</p>
+<h5 id="cloud-computing-exercises"><strong>Cloud Computing Exercises</strong></h5>
+<ul>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Write a bash script that takes a file path as an argument and copies that file to a designated folder on your server.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Find a file online that changes periodically, then write a program to download that file every time it changes.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Try creating your own Twitter or GitHub bot with the Twitter API or the GitHub API.</p>
+</li>
+</ul>
+<h4 id="shutting-down-a-server"><strong>Shutting Down a Server</strong></h4>
+<h3 id="start-building"><strong>Start Building</strong></h3>
+
+    </div>
+  </div>
+</body>
+
+</html>

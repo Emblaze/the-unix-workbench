@@ -1003,11 +1003,11 @@ In Git terminology the HEAD represents the most recent commit on the branch whic
 
 #### Exercises
 
--   [ ]  Start a new branch.
+-   [x]  Start a new branch.
 
--   [ ]  Switch to that branch and add commits to it. Switch to an older branch and then merge the new branch into your current branch.
+-   [x]  Switch to that branch and add commits to it. Switch to an older branch and then merge the new branch into your current branch.
 
--   [ ]  Purposefully create and resolve a merge conflict.
+-   [x]  Purposefully create and resolve a merge conflict.
 
 #### **GitHub**
 
@@ -1075,7 +1075,7 @@ The original source repository (the repository you forked) is often called the u
 
 -   [x] Create a new repository on GitHub. Clone your repository and add a README.md file. Push this file to GitHub and create a GitHub Pages website for this repository.
 
--   [ ] Fork an existing repository (try one of mine [seankross](https://github.com/seankross)) and try to identify something valuable you could contribute. Make changes or additions to that repository, then open a pull request.
+-   [x] Fork an existing repository (try one of mine [seankross](https://github.com/seankross)) and try to identify something valuable you could contribute. Make changes or additions to that repository, then open a pull request.
 
 -   [ ] Read through GitHub’s Guides.
 
@@ -1155,7 +1155,7 @@ Now that we’ve chosen a text editor we can edit the cron table using the comma
 	# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
 	# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 	# |  |  |  |  |
-	# *  *  *  *  *  user command to be executed]
+	# *  *  *  *  *  [user command to be executed]
 
 Star (*) which represents all of the possible values in a column.
 
